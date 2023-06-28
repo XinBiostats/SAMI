@@ -1,36 +1,3 @@
-m.z. export,Name
-m.z.87.008,pyruvate
-m.z.89.023,lactate
-m.z.117.018,succinate
-m.z.132.029,aspartate
-m.z.133.013,malate
-m.z.134.046,adenine
-m.z.135.029,hypoxanthine
-m.z.140.01,o-phosphoethanolamine
-m.z.145.061,glutamine
-m.z.146.044,glutamate
-m.z.152.07,dopamine
-m.z.171.005,Glycerol-3-phosphate
-m.z.173.007,Aconitate
-m.z.174.039,N-Acetyl-L-aspartic acid
-m.z.175.023,ascorbic acid
-m.z.191.018,citric acid
-m.z.214.047,glycerophosphorylethanolamine
-m.z.215.031,Glucose
-m.z.259.019,Glucose 6-phosphate
-m.z.267.073,inosine
-m.z.279.23,Uridine
-m.z.281.246,oleic acid
-m.z.283.261,stearic acid
-m.z.303.23,arachidonic acid
-m.z.306.073,Glutathione
-m.z.323.027,Uridine monophosphate
-m.z.328.055,cAMP
-m.z.346.052,Adenosine monophosphate
-m.z.362.047,Guanosine monophosphate
-m.z.426.018,ADP
-m.z.435.248,LysoPA(18:1(9Z)/0:0)
-m.z.437.264,LysoPA(18:0/0:0)
-m.z.442.013,GDP
-m.z.445.049,CDP-ethanolamine
-m.z.505.983,ATP
+version https://git-lfs.github.com/spec/v1
+oid sha256:ea11713754e1697079ea7250a2a606ef5447c40bb0a9512181827cf5eb71d49e
+size 898
