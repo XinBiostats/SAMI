@@ -25,6 +25,6 @@ git clone https://github.com/XinBiostats/SAMI
 pip install -r requirements.txt
 ```
 ## Usage
-1. Download data from [Dropbox](https://www.dropbox.com/scl/fo/9ntjdocvj3rlopjrjnrxu/h?dl=0&rlkey=3ipjglxydmiioxika44bw2lzv) and put downloaded data into datasets.
+1. Download data from [Dropbox](https://www.dropbox.com/scl/fo/9ntjdocvj3rlopjrjnrxu/h?dl=0&rlkey=3ipjglxydmiioxika44bw2lzv) and put downloaded data into datasets folder.
 2. We created a demo ([demo.ipynb](https://github.com/XinBiostats/SAMI/blob/main/demo/demo.ipynb)) to demonstrate how to use SAMI.
 
