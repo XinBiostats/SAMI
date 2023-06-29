@@ -14,8 +14,16 @@ This work is licensed under a
 We present a method for the simultaneous analysis of spatial metabolome, lipidome, and glycome from a single tissue section using mass spectrometry imaging. Our workflow includes a computational pipeline called __Spatial Augmented Multiomics Interface (SAMI)__ that offers multiomics integration, high dimensionality clustering, spatial anatomical mapping with matched multiomics features, and metabolic pathway enrichment to providing unprecedented insights into the spatial distribution and interaction of these biomolecules in mammalian tissue biology.
 ![Main Figure](https://github.com/XinBiostats/SAMI/blob/main/figures/main.png)
 
-## Requirement
-SAMI is implemented by both Python and R. Install requirements
+## Installation
+1. Download SAMI
+```bash
+git clone https://github.com/XinBiostats/SAMI
+```
+2. Requirements
+   SAMI is implemented by both Python and R. To install requirements
 ```bash
 pip install -r requirements.txt
 ```
+## Usage
+1. Download data from [Dropbox]().
+
