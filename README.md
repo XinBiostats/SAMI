@@ -15,16 +15,15 @@ We present a method for the simultaneous analysis of spatial metabolome, lipidom
 ![Main Figure](https://github.com/XinBiostats/SAMI/blob/main/figures/main.png)
 
 ## Installation
-1. Download SAMI
+1. Download SAMI:
 ```bash
 git clone https://github.com/XinBiostats/SAMI
 ```
-2. Requirements
-   SAMI is implemented by both Python and R. To install requirements
+2. Requirements: SAMI is implemented by both Python and R. To install requirements
 ```bash
 pip install -r requirements.txt
 ```
 ## Usage
-1. Download data from [Dropbox](https://www.dropbox.com/scl/fo/9ntjdocvj3rlopjrjnrxu/h?dl=0&rlkey=3ipjglxydmiioxika44bw2lzv) and put downloaded data into datasets.
-2. We created a demo ([demo.ipynb](https://github.com/XinBiostats/SAMI/blob/main/demo/demo.ipynb)) to demonstrate how to use SAMI.
+1. Download data from [Dropbox](https://www.dropbox.com/scl/fo/9ntjdocvj3rlopjrjnrxu/h?dl=0&rlkey=3ipjglxydmiioxika44bw2lzv) and put downloaded data into datasets folder.
+2. We created a demo ([demo.ipynb](https://github.com/XinBiostats/SAMI/blob/main/demo/demo.ipynb)) to demonstrate how to use SAMI. The results will be displayed inline and stored in [results](https://github.com/XinBiostats/SAMI/tree/main/results) folder.
 
