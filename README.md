@@ -15,11 +15,11 @@ We present a method for the simultaneous analysis of spatial metabolome, lipidom
 ![Main Figure](https://github.com/XinBiostats/SAMI/blob/main/figures/main.png)
 
 ## Installation
-1. Download SAMI
+1. Download SAMI:
 ```bash
 git clone https://github.com/XinBiostats/SAMI
 ```
-2. Requirements
+2. Requirements:<br>
    SAMI is implemented by both Python and R. To install requirements
 ```bash
 pip install -r requirements.txt
