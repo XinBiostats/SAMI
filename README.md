@@ -27,3 +27,4 @@ pip install -r requirements.txt
 1. Download data from [Dropbox](https://www.dropbox.com/scl/fo/9ntjdocvj3rlopjrjnrxu/h?dl=0&rlkey=3ipjglxydmiioxika44bw2lzv) and put downloaded data into datasets folder.
 2. We created a demo ([demo.ipynb](https://github.com/XinBiostats/SAMI/blob/main/demo/demo.ipynb)) to demonstrate how to use SAMI. The results will be displayed inline and stored in [results](https://github.com/XinBiostats/SAMI/tree/main/results) folder.
 
+©July 11, 2023 University of Florida Research Foundation, Inc. All Rights Reserved.
