@@ -22,7 +22,7 @@ git clone https://github.com/XinBiostats/SAMI
 ```
 2. Requirements: SAMI is implemented by both Python and R. To install requirements
 ```bash
-pip install -r requirements.txt
+conda env create -f environment.yml
 ```
 ## Usage
 1. Download data from [Dropbox](https://www.dropbox.com/scl/fo/qjdk94golwij84xfii15b/h?rlkey=etrdydm1iw86ntcprbem2wivn&dl=1) and put downloaded data into datasets folder.
