@@ -29,8 +29,8 @@ def csv2h5ad(data_path,pattern,split=False):
             obs=data_temp.set_index('obsindex')[['region']]
             adata.obs=obs
             adata.obsm['spatial'] = pos
-            varindex = pd.DataFrame(index=data_temp[feat_cols].columns)
-            adata.var = varindex
+            var = pd.DataFrame({'omics': split_file[1]},index=data_temp[feat_cols].columns)
+            adata.var = var
             adata.raw = adata
             
             adata.write(os.path.join(data_path,f'{split_file[0]}_{split_file[1]}.h5ad'))
