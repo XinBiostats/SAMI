@@ -67,9 +67,9 @@ def pooldata(data_path,pattern,split=False):
 
             adata_dict[split_file[1]]=adata_temp
 
-    #remove duplicate columns between metabolomics and lipidomics from metabolomics
-    common_elements = list(set(adata_dict['metabolomics'].var.index.to_list()).intersection(adata_dict['lipidomics'].var.index.to_list()))
-    adata_dict['metabolomics']=adata_dict['metabolomics'][:,~adata_dict['metabolomics'].var.index.isin(common_elements)]
+    # #remove duplicate columns between metabolomics and lipidomics from metabolomics
+    # common_elements = list(set(adata_dict['metabolomics'].var.index.to_list()).intersection(adata_dict['lipidomics'].var.index.to_list()))
+    # adata_dict['metabolomics']=adata_dict['metabolomics'][:,~adata_dict['metabolomics'].var.index.isin(common_elements)]
 
     #merge dataset
     adata=ad.concat(adata_dict,join='inner',axis=1,label='omics')

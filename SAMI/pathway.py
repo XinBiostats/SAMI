@@ -10,30 +10,36 @@ from rpy2.robjects import pandas2ri
 from rpy2.robjects.conversion import localconverter
 
 class Pathway:
-    def __init__(self,region,modality):
+    def __init__(self,region,omics,pool=True):
         if not os.path.exists('../results/pathway'):
             os.makedirs('../results/pathway')
             
         self.region = region
-        if modality=='metabolomics' or modality=='glycomics':
-            print('Metabolomics and Glycomics are combined for pathway enrichment analysis.')
-            self.modality = 'metabolomics_glycomics'
+        if pool:
+            self.modality = 'pool'
         else:
-            self.modality = 'lipidomics'
+            self.modality = omics
+        
+        if omics=='metabolomics' or omics=='glycomics':
+            print('Metabolomics and Glycomics are combined for pathway enrichment analysis.')
+            self.omics = 'metabolomics_glycomics'
+        else:
+            self.omics = 'lipidomics'
             
     def findpathway(self):
         r_source = ro.r['source']
         r_source('../SAMI/MetabAnalystR.R')  
         
-        markers = pd.read_csv(os.path.join('../results/markers/',f'{self.region}_marker.csv'))
+        markers = pd.read_csv(f'../results/markers/{self.modality}/{self.region}_marker.csv')
         clusters = markers['cluster'].unique().tolist()
         
-        if self.modality=='metabolomics_glycomics':
+        if self.omics=='metabolomics_glycomics':
             markers = markers.loc[markers['omics'].isin(['metabolomics','glycomics'])]
         else:
             markers = markers.loc[markers['omics']=='lipidomics']
         
         logical_arg = ro.BoolVector([True,False])
+        modalityR = ro.StrVector([self.modality])
         clustersR = ro.vectors.IntVector(clusters)
         regionR = ro.StrVector([self.region])
         with localconverter(ro.default_converter + pandas2ri.converter):
@@ -41,10 +47,10 @@ class Pathway:
             
         PathwayEnrichment = ro.r['PathwayEnrichment']
         
-        if self.modality=='metabolomics_glycomics':
-            PathwayEnrichment(region=regionR,markers=markersR,clusters=clustersR,lipid=logical_arg[1],merge=logical_arg[1])
+        if self.omics=='metabolomics_glycomics':
+            PathwayEnrichment(modality=modalityR,region=regionR,markers=markersR,clusters=clustersR,lipid=logical_arg[1])
         else:
-            PathwayEnrichment(region=regionR,markers=markersR,clusters=clustersR,lipid=logical_arg[0],merge=logical_arg[1])
+            PathwayEnrichment(modality=modalityR,region=regionR,markers=markersR,clusters=clustersR,lipid=logical_arg[0])
         
     def anndict(self):
         anndict = {}
@@ -58,13 +64,13 @@ class Pathway:
     
 
     def plot_dot(self,cluster,scale,height,top=None,show=False):
-        ora_data = pd.read_csv(f'../results/pathway/ora_{self.modality}.csv')
+        ora_data = pd.read_csv(f'../results/pathway/{self.modality}/ora_{self.region}_{self.omics}.csv')
         ora_data['enrichment_ratio'] = ora_data['hits']/ora_data['expected']
         
         if top is None:
-            data = ora_data.loc[(ora_data['modality']==self.modality)&(ora_data['cluster']==cluster)&(ora_data['region']==self.region)]
+            data = ora_data.loc[(ora_data['omics']==self.omics)&(ora_data['cluster']==cluster)&(ora_data['region']==self.region)]
         else:
-            data = ora_data.loc[(ora_data['modality']==self.modality)&(ora_data['cluster']==cluster)&(ora_data['region']==self.region)].head(top)
+            data = ora_data.loc[(ora_data['omics']==self.omics)&(ora_data['cluster']==cluster)&(ora_data['region']==self.region)].head(top)
 
         if data.shape[0]!=0:
 
@@ -135,7 +141,7 @@ class Pathway:
             cbar.ax.set_position(new_loc)
             fig.set_size_inches(20,height)
 
-            plt.savefig(os.path.join('../results/pathway/',f'{self.region}_{self.modality}_{cluster}.png'))
+            plt.savefig(f'../results/pathway/{self.modality}/{self.region}_{self.omics}_{cluster}.png')
             if show == False:
                 plt.close()
             else:
@@ -144,18 +150,18 @@ class Pathway:
     
     
     def pathway_network(self,cluster,top=None,show=False):
-        ora_data = pd.read_csv(f'../results/pathway/ora_{self.modality}.csv')
+        ora_data = pd.read_csv(f'../results/pathway/{self.modality}/ora_{self.region}_{self.omics}.csv')
         ora_data['enrichment_ratio'] = ora_data['hits']/ora_data['expected']
         
-        if self.modality=='metabolomics_glycomics':
+        if self.omics=='metabolomics_glycomics':
             libname = 'smpdb_pathway'
         else:
             libname = 'sub_class'
         
         if top is None:
-            data = ora_data.loc[(ora_data['modality']==self.modality)&(ora_data['cluster']==cluster)&(ora_data['region']==self.region)]
+            data = ora_data.loc[(ora_data['omics']==self.omics)&(ora_data['cluster']==cluster)&(ora_data['region']==self.region)]
         else:
-            data = ora_data.loc[(ora_data['modality']==self.modality)&(ora_data['cluster']==cluster)&(ora_data['region']==self.region)].head(top)
+            data = ora_data.loc[(ora_data['omics']==self.omics)&(ora_data['cluster']==cluster)&(ora_data['region']==self.region)].head(top)
 
         if data.shape[0]!=0:
 
@@ -220,7 +226,7 @@ class Pathway:
             nx.draw_networkx_labels(G, label_pos,labels, font_size=45,font_weight='bold', verticalalignment='top')
             nx.draw(G, pos, node_size=node_size, node_color=node_color,cmap='PuRd_r',edge_color='lightblue',width=weights,edgecolors='black',linewidths=5)
 
-            plt.savefig(os.path.join('../results/pathway/',f'network_{self.region}_{self.modality}_{cluster}.png'))
+            plt.savefig(f'../results/pathway/{self.modality}/network_{self.region}_{self.omics}_{cluster}.png')
             if show == False:
                 plt.close()
             else:

@@ -12,9 +12,10 @@ import matplotlib.ticker as ticker
 import seaborn as sns
     
 class Markers:
-    def __init__(self, region):
+    def __init__(self, region, modality):
         self.region = region
-    
+        self.modality = modality
+        
     def findmarkers(self,adata,adj_pval_cutoff,top,adata2=None):
 
         cluster_param='leiden'
@@ -61,13 +62,13 @@ class Markers:
         marker_result=marker_result.drop(columns=['rank'])
 
 
-        file_path = '../results/markers/'
+        file_path = f'../results/markers/{self.modality}/'
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         pvalue_result.to_csv(os.path.join(file_path,f'{self.region}_pvalue.csv'),index=False)
         marker_result.to_csv(os.path.join(file_path,f'{self.region}_marker.csv'),index=False)
         
     def circular_tree(self,clusters=None,top=5, show=True):
-        markers = pd.read_csv(os.path.join('../results/markers/',f'{self.region}_marker.csv'))
+        markers = pd.read_csv(f'../results/markers/{self.modality}/{self.region}_marker.csv')
         if clusters != None:
             markers = markers.loc[markers['cluster'].isin(clusters)]
         else:
@@ -158,14 +159,14 @@ class Markers:
         plt.ylim(y_min - y_margin, y_max + y_margin)
 
         cluster_str = str(clusters).replace("'","")
-        plt.savefig(os.path.join('../results/markers/',f'circulartree_{self.region}_{cluster_str}.png'))
+        plt.savefig(f'../results/markers/{self.modality}/circulartree_{self.region}_{cluster_str}.png')
         if show==False:
             plt.close()
         else:
             plt.show()
             
     def volcano_plot(self,cluster,show=True):
-        pvalues = pd.read_csv(os.path.join('../results/markers/',f'{self.region}_pvalue.csv'))
+        pvalues = pd.read_csv(f'../results/markers/{self.modality}/{self.region}_pvalue.csv')
 
         pval = pvalues.loc[pvalues['pvalue']>0]
         pval = pval.loc[(pval['cluster']==cluster)&(pval['pvalue']>=np.percentile(pval['pvalue'],5))&(pval['abs_avg_log2FC']<=np.percentile(pval['abs_avg_log2FC'],95))]
@@ -211,7 +212,7 @@ class Markers:
         plt.ylabel('-log10(pvalue)',fontsize=40,fontweight='bold')
 
         cluster = str(cluster).replace("'","")
-        plt.savefig(os.path.join('../results/markers/',f'vol_{self.region}_{cluster}.png'))
+        plt.savefig(f'../results/markers/{self.modality}/vol_{self.region}_{cluster}.png')
         if show == False:
             plt.close()
         else:
@@ -234,7 +235,7 @@ class Markers:
         ax.set_ylabel('Density',fontsize=15,fontweight='bold')
         ax.xaxis.set_major_locator(ticker.MaxNLocator(3))
         ax.yaxis.set_major_locator(ticker.MaxNLocator(3))
-        plt.savefig(os.path.join('../results/markers/',f'density_{self.region}_{cluster}_{marker}.png'))
+        plt.savefig(f'../results/markers/{self.modality}/density_{self.region}_{cluster}_{marker}.png')
         if show == False:
             plt.close()
         else:
