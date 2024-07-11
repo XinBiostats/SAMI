@@ -33,3 +33,17 @@ def adj_pvalue(sort):
     sort['rank']=sort.index+1
     sort['adj_pvalue']=sort['pvalue']*n/sort['rank']
     return sort
+
+def adata_concat(*adata_list):
+
+    common_vars = adata_list[0].var_names
+    for adata in adata_list[1:]:
+        common_vars = common_vars.intersection(adata.var_names)
+    
+    adata_sub_list = [adata[:, list(common_vars)] for adata in adata_list]
+    
+    adata_combined = sc.concat(adata_sub_list, join='inner', label='sample')
+
+    adata_combined.var = adata_sub_list[0].var
+    
+    return adata_combined
