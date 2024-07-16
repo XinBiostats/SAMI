@@ -55,6 +55,15 @@ class Clusters:
             show=False
         )
         
+            
+        samples = np.unique(adata.obs['region']).tolist()
+        for sample in samples:
+            adata_sub = adata[adata.obs['region']==sample]
+            x_label = np.min(adata_sub.obsm['spatial'][:,0])
+            y_label = np.min(adata_sub.obsm['spatial'][:,1])
+            axs[1].text(x_label,y_label, sample,fontsize=10, color='black')
+    
+        
         plt.savefig(f'../results/clustering/{self.modality}/{self.region}_{self.resolution}_umap_{n_cluster}.png',dpi=400)
         
         if show==False:
@@ -70,6 +79,8 @@ class Clusters:
         colorlist=adata.obs[color].cat.categories.tolist()
         n_cluster=str(len(colorlist))
 
+        fig, axs = plt.subplots(1, 1, figsize=(15, 10))
+        
         sc.pl.spatial(
             adata,
             img_key=None,
@@ -79,8 +90,16 @@ class Clusters:
             title=f'{self.region}_{self.modality}_{self.resolution}',
             size=size,
             palette=[v for k, v in clusters_colors.items() if k in colorlist],
+            ax=axs,
             show=False
         )
+        
+        samples = np.unique(adata.obs['region']).tolist()
+        for sample in samples:
+            adata_sub = adata[adata.obs['region']==sample]
+            x_label = np.min(adata_sub.obsm['spatial'][:,0])
+            y_label = np.min(adata_sub.obsm['spatial'][:,1])
+            axs.text(x_label,y_label, sample,fontsize=10, color='black')
 
         plt.savefig(f'../results/clustering/{self.modality}/{self.region}_{self.resolution}_{n_cluster}.png',dpi=400)
         if show==False:
@@ -97,6 +116,8 @@ class Clusters:
             
         colorlist=adata.obs['leiden'].cat.categories.tolist()
         palette=[v if k in map(str,cluster) else '#A0A0A0' for k, v in clusters_colors.items()]
+        
+        fig, axs = plt.subplots(1, 1, figsize=(15, 10))
         sc.pl.spatial(
             adata,
             img_key=None,
@@ -107,8 +128,17 @@ class Clusters:
             title=f'{self.region}_{self.modality}_{self.resolution}_{cluster}',
             size=size,
             palette=palette,
+            ax=axs,
             show=False
         )
+        
+        samples = np.unique(adata.obs['region']).tolist()
+        for sample in samples:
+            adata_sub = adata[adata.obs['region']==sample]
+            x_label = np.min(adata_sub.obsm['spatial'][:,0])
+            y_label = np.min(adata_sub.obsm['spatial'][:,1])
+            axs.text(x_label,y_label, sample,fontsize=10, color='black')
+            
         plt.savefig(f'../results/clustering/{self.modality}/{self.region}_{self.resolution}_{cluster}.png',dpi=400) 
         if show==False:
             plt.close()
@@ -170,6 +200,13 @@ class Cluster_Integration:
             ax=axs[1],
             show=False
         )
+        
+        samples = np.unique(adata.obs['region']).tolist()
+        for sample in samples:
+            adata_sub = adata[adata.obs['region']==sample]
+            x_label = np.min(adata_sub.obsm['spatial'][:,0])
+            y_label = np.min(adata_sub.obsm['spatial'][:,1])
+            axs[1].text(x_label,y_label, sample,fontsize=10, color='black')
 
         plt.savefig(f'../results/clustering/{self.modality}/{region}_umap_integrated.png',dpi=400)
 
@@ -202,6 +239,8 @@ class Cluster_Integration:
             
         colorlist=adata.obs['leiden'].cat.categories.tolist()
         palette=[v if k in map(str,cluster) else '#A0A0A0' for k, v in clusters_colors.items()]
+        
+        fig, axs = plt.subplots(1, 1, figsize=(15, 10))
         sc.pl.spatial(
             adata,
             img_key=None,
@@ -212,8 +251,17 @@ class Cluster_Integration:
             title=f'{region}_{self.modality}_integrated_{cluster}',
             size=size,
             palette=palette,
+            ax=axs,
             show=False
         )
+        
+        samples = np.unique(adata.obs['region']).tolist()
+        for sample in samples:
+            adata_sub = adata[adata.obs['region']==sample]
+            x_label = np.min(adata_sub.obsm['spatial'][:,0])
+            y_label = np.min(adata_sub.obsm['spatial'][:,1])
+            axs.text(x_label,y_label, sample,fontsize=10, color='black')
+            
         plt.savefig(f'../results/clustering/{self.modality}/{region}_{cluster}.png',dpi=400) 
         if show==False:
             plt.close()
