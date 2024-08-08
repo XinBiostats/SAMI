@@ -14,7 +14,11 @@ class Clusters:
     def clustering(self):
         adata=sc.read(os.path.join('../datasets/',f'{self.region}_{self.modality}.h5ad'))
         sc.pp.pca(adata)
-        sc.pp.neighbors(adata,n_pcs=20)
+        if len(np.unique(adata.obs['region']))>1:
+            sc.external.pp.harmony_integrate(adata,key='region',max_iter_harmony=20)
+            sc.pp.neighbors(adata,use_rep = 'X_pca_harmony', n_pcs=20)
+        else:
+            sc.pp.neighbors(adata,n_pcs=20)
         sc.tl.umap(adata)
         sc.tl.leiden(adata,resolution=self.resolution)
 
