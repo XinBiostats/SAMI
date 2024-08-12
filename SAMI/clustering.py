@@ -16,7 +16,9 @@ class Clusters:
         sc.pp.pca(adata)
         if len(np.unique(adata.obs['region']))>1:
             sc.external.pp.harmony_integrate(adata,key='region',max_iter_harmony=20)
-            sc.pp.neighbors(adata,use_rep = 'X_pca_harmony', n_pcs=20)
+            all_pcs = adata.obsm['X_pca_harmony'].shape[1]
+            n_pcs = min(20, all_pcs)
+            sc.pp.neighbors(adata,use_rep = 'X_pca_harmony', n_pcs=n_pcs)
         else:
             sc.pp.neighbors(adata,n_pcs=20)
         sc.tl.umap(adata)
