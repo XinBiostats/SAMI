@@ -20,7 +20,10 @@ class Clusters:
             n_pcs = min(20, all_pcs)
             sc.pp.neighbors(adata,use_rep = 'X_pca_harmony', n_pcs=n_pcs)
         else:
-            sc.pp.neighbors(adata,n_pcs=20)
+            all_pcs = adata.obsm['X_pca'].shape[1]
+            n_pcs = min(20, all_pcs)
+            sc.pp.neighbors(adata,n_pcs=n_pcs)
+            
         sc.tl.umap(adata)
         sc.tl.leiden(adata,resolution=self.resolution)
 
