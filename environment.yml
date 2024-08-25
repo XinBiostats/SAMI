@@ -23,5 +23,6 @@ dependencies:
   - python-igraph=0.10.3
   - leidenalg=0.9.1
   - pygraphviz=1.10
-  - r-qs=0.25.5
   - harmonypy=0.0.10
+  - ipykernel
+  - jupyterlab
