@@ -37,5 +37,8 @@ conda env create -f environment.yml
    /Users/xin.ma/anaconda3/envs/SAMI/lib/R
    ```
    Open [./SAMI/pathway.py](https://github.com/XinBiostats/SAMI/blob/main/SAMI/pathway.py) scripts, update os.environ['R_HOME'] using your R home directory.
+   ```python
+   os.environ['R_HOME'] = "/Users/xin.ma/anaconda3/envs/SAMI/lib/R"
+   ```
 4. We created demo files([demo](https://github.com/XinBiostats/SAMI/blob/main/demo)) to demonstrate how to use SAMI. The results will be displayed inline and stored in [results](https://github.com/XinBiostats/SAMI/tree/main/results) folder.
 
