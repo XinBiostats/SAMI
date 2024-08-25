@@ -26,5 +26,9 @@ conda env create -f environment.yml
 ```
 ## Usage
 1. Download data from [Dropbox](https://www.dropbox.com/scl/fo/qjdk94golwij84xfii15b/h?rlkey=etrdydm1iw86ntcprbem2wivn&dl=1) and put downloaded data into datasets folder.
-2. We created demo files([demo](https://github.com/XinBiostats/SAMI/blob/main/demo)) to demonstrate how to use SAMI. The results will be displayed inline and stored in [results](https://github.com/XinBiostats/SAMI/tree/main/results) folder.
+2. ```bash
+   conda activate SAMI
+   R RHOME
+   ```
+3. We created demo files([demo](https://github.com/XinBiostats/SAMI/blob/main/demo)) to demonstrate how to use SAMI. The results will be displayed inline and stored in [results](https://github.com/XinBiostats/SAMI/tree/main/results) folder.
 
