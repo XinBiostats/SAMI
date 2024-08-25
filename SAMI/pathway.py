@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import networkx as nx
-os.environ['R_HOME'] = "/blue/li.chen1/xin.ma/conda/envs/maldi/lib/R"
+os.environ['R_HOME'] = "/Users/xin.ma/anaconda3/envs/SAMI/lib/R"
 import rpy2.robjects as ro
 from rpy2.robjects import pandas2ri
 from rpy2.robjects.conversion import localconverter
