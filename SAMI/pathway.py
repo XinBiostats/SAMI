@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import networkx as nx
-os.environ['R_HOME'] = "/Users/xin.ma/anaconda3/envs/SAMI/lib/R"
+# os.environ['R_HOME'] = "/Users/xin.ma/anaconda3/envs/SAMI/lib/R" # please update to your RHOME if you run SAMI on your own environemnt.
 import rpy2.robjects as ro
 from rpy2.robjects import pandas2ri
 from rpy2.robjects.conversion import localconverter
