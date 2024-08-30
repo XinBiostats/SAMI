@@ -21,8 +21,14 @@ SAMI can be run through two different ways:
 ### 1. Using Docker (Recommended):
 We have pre-configured the environment for you using Docker, which ensures a consistent and reliable environment and make it easy to get started.
 
-- a
-
+- Clone SAMI from Github Repository:
+```bash
+git clone https://github.com/XinBiostats/SAMI
+```
+- Download [testing data](https://www.dropbox.com/scl/fo/qjdk94golwij84xfii15b/h?rlkey=etrdydm1iw86ntcprbem2wivn&dl=1) from Dropbox and put it in "./SAMI/datasets/".
+- Download [libararies] for pathway enrichment analysis from Dropbox and put them in "./SAMI/lib/".
+- Download __Docker__ desktop from [Docker website](https://www.docker.com), and install it on your machine.
+- 
 
 
 1. Download SAMI:
