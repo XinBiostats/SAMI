@@ -35,7 +35,7 @@ docker run -it --rm --user root -e GRANT_SUDO=yes -p 8888:8888 -v "YOUR_SAMI_PAT
 
 example: docker run -it --rm --user root -e GRANT_SUDO=yes -p 8888:8888 -v "/Users/xin.ma/Desktop/SAMI:/home/jovyan/work" xinbiostats/sami:latest
 ```
-- Find the highlighted link in your teminal and copy it to your browser.
+- Find the highlighted link in your teminal and copy it to your browser. The link will not be the same, but will show up at same place.
 ![docker_link](https://github.com/XinBiostats/SAMI/blob/main/figures/docker_link.png)
 
 
