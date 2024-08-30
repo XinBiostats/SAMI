@@ -40,7 +40,7 @@ example: docker run -it --rm --user root -e GRANT_SUDO=yes -p 8888:8888 -v "/Use
 - All set! You can play with our Demo now. ([demo](https://github.com/XinBiostats/SAMI/blob/main/demo)) 
 
 ### 2. Using Conda:
-We have pre-configured the environment for you using Docker, which ensures a consistent and reliable environment and make it easy to get started.
+Create your own environment for SAMI.(Due to potential incompatibility issues caused by different operating systems and versions, it is recommended to use Docker.）
 
 #### Steps:
 - Clone SAMI from Github Repository:
