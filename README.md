@@ -35,6 +35,7 @@ docker run -it --rm --user root -e GRANT_SUDO=yes -p 8888:8888 -v "YOUR_SAMI_PAT
 
 example: docker run -it --rm --user root -e GRANT_SUDO=yes -p 8888:8888 -v "/Users/xin.ma/Desktop/SAMI:/home/jovyan/work" xinbiostats/sami:latest
 ```
+-
 
 
 
