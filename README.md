@@ -21,6 +21,7 @@ SAMI can be run through two different ways:
 ### 1. Using Docker (Recommended):
 We have pre-configured the environment for you using Docker, which ensures a consistent and reliable environment and make it easy to get started.
 
+#### Steps:
 - Clone SAMI from Github Repository:
 ```bash
 git clone https://github.com/XinBiostats/SAMI
