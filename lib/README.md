@@ -1,1 +1,1 @@
-Please download libraries for pathway enrichment analysis from [Dropbox](https://www.dropbox.com/scl/fo/d1ssah39qkfr9er640dai/APjGcNoiOX9zW84QvhCJtuw?rlkey=joosfjb7vjs72t3t4pmyxrrol&st=uqcbacfy&dl=1)
+Please download libraries for pathway enrichment analysis from [Dropbox](https://www.dropbox.com/scl/fo/d1ssah39qkfr9er640dai/APjGcNoiOX9zW84QvhCJtuw?rlkey=joosfjb7vjs72t3t4pmyxrrol&st=uqcbacfy&dl=1), and put all libraries in "./SAMI/lib/".
