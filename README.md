@@ -54,46 +54,17 @@ git clone https://github.com/XinBiostats/SAMI
 conda env create -f environment.yml
 ```
 -  Activate SAMI environment, find your R installation's home directory.
-   ```bash
-   conda activate SAMI
-   
-   R RHOME
-   ```
-   For example:
-   ```bash
-   /Users/xin.ma/anaconda3/envs/SAMI/lib/R
-   ```
-   Open [./SAMI/pathway.py](https://github.com/XinBiostats/SAMI/blob/main/SAMI/pathway.py) scripts, update os.environ['R_HOME'] using your R home directory.
-   ```python
-   os.environ['R_HOME'] = "/Users/xin.ma/anaconda3/envs/SAMI/lib/R"
-   ```
-
-
-
-
-1. Download SAMI:
 ```bash
-git clone https://github.com/XinBiostats/SAMI
-```
-2. Requirements: SAMI is implemented by both Python and R. To install requirements
-```bash
-conda env create -f environment.yml
-```
-## Usage
-1. Download data from [Dropbox](https://www.dropbox.com/scl/fo/qjdk94golwij84xfii15b/h?rlkey=etrdydm1iw86ntcprbem2wivn&dl=1) and put downloaded data into datasets folder.
-2. Activate SAMI environment, find your R installation's home directory.
-   ```bash
-   conda activate SAMI
+conda activate SAMI
    
-   R RHOME
-   ```
-   For example:
-   ```bash
-   /Users/xin.ma/anaconda3/envs/SAMI/lib/R
-   ```
-   Open [./SAMI/pathway.py](https://github.com/XinBiostats/SAMI/blob/main/SAMI/pathway.py) scripts, update os.environ['R_HOME'] using your R home directory.
-   ```python
-   os.environ['R_HOME'] = "/Users/xin.ma/anaconda3/envs/SAMI/lib/R"
-   ```
-4. We created demo files([demo](https://github.com/XinBiostats/SAMI/blob/main/demo)) to demonstrate how to use SAMI. The results will be displayed inline and stored in [results](https://github.com/XinBiostats/SAMI/tree/main/results) folder.
-
+R RHOME
+```
+For example:
+```bash
+/Users/xin.ma/anaconda3/envs/SAMI/lib/R
+```
+Open [./SAMI/pathway.py](https://github.com/XinBiostats/SAMI/blob/main/SAMI/pathway.py) scripts, update os.environ['R_HOME'] using your R home directory.
+```python
+os.environ['R_HOME'] = "/Users/xin.ma/anaconda3/envs/SAMI/lib/R"
+```
+- All set! You can play with our Demo now. ([demo](https://github.com/XinBiostats/SAMI/blob/main/demo)) 
