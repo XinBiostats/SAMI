@@ -29,10 +29,13 @@ git clone https://github.com/XinBiostats/SAMI
 - Download [testing data](https://www.dropbox.com/scl/fo/qjdk94golwij84xfii15b/h?rlkey=etrdydm1iw86ntcprbem2wivn&dl=1) from Dropbox and put it in "./SAMI/datasets/".  
 - Download libararies for pathway enrichment analysis from Dropbox and put them in "./SAMI/lib/".  
 - Download __Docker__ desktop from [Docker website](https://www.docker.com), and install it on your machine.  
-- Open the Terminal or PowerShell(Windows), then run this command with your SAMI path (eg.docker run -it --rm --user root -e GRANT_SUDO=yes -p 8888:8888 -v "__/Users/xin.ma/Desktop/SAMI__:/home/jovyan/work" xinbiostats/sami:latest)  
+- Open the Terminal or PowerShell(Windows), then run below command with your SAMI path:
 ```bash
 docker run -it --rm --user root -e GRANT_SUDO=yes -p 8888:8888 -v "YOUR_SAMI_PATH:/home/jovyan/work" xinbiostats/sami:latest
+
+example: docker run -it --rm --user root -e GRANT_SUDO=yes -p 8888:8888 -v "/Users/xin.ma/Desktop/SAMI:/home/jovyan/work" xinbiostats/sami:latest
 ```
+
 
 
 1. Download SAMI:
