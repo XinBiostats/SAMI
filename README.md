@@ -39,6 +39,37 @@ example: docker run -it --rm --user root -e GRANT_SUDO=yes -p 8888:8888 -v "/Use
 ![docker_link](https://github.com/XinBiostats/SAMI/blob/main/figures/docker_link.png)
 - All set! You can play with our Demo now. ([demo](https://github.com/XinBiostats/SAMI/blob/main/demo)) 
 
+### 2. Using Conda:
+We have pre-configured the environment for you using Docker, which ensures a consistent and reliable environment and make it easy to get started.
+
+#### Steps:
+- Clone SAMI from Github Repository:
+```bash
+git clone https://github.com/XinBiostats/SAMI
+```
+- Download [testing data](https://www.dropbox.com/scl/fo/qjdk94golwij84xfii15b/h?rlkey=etrdydm1iw86ntcprbem2wivn&dl=1) from Dropbox and put it in "./SAMI/datasets/".  
+- Download libararies for pathway enrichment analysis from Dropbox and put them in "./SAMI/lib/".  
+- Open the Terminal or PowerShell(Windows), then install requirements:
+```bash
+conda env create -f environment.yml
+```
+-  Activate SAMI environment, find your R installation's home directory.
+   ```bash
+   conda activate SAMI
+   
+   R RHOME
+   ```
+   For example:
+   ```bash
+   /Users/xin.ma/anaconda3/envs/SAMI/lib/R
+   ```
+   Open [./SAMI/pathway.py](https://github.com/XinBiostats/SAMI/blob/main/SAMI/pathway.py) scripts, update os.environ['R_HOME'] using your R home directory.
+   ```python
+   os.environ['R_HOME'] = "/Users/xin.ma/anaconda3/envs/SAMI/lib/R"
+   ```
+
+
+
 
 1. Download SAMI:
 ```bash
