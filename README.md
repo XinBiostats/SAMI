@@ -37,7 +37,7 @@ example: docker run -it --rm --user root -e GRANT_SUDO=yes -p 8888:8888 -v "/Use
 ```
 - Find the highlighted link in your teminal and copy it to your browser. The link will not be the same, but will show up at same place.
 ![docker_link](https://github.com/XinBiostats/SAMI/blob/main/figures/docker_link.png)
-
+- All set! You can play with our Demo now. ([demo](https://github.com/XinBiostats/SAMI/blob/main/demo)) 
 
 
 1. Download SAMI:
