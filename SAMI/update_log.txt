@@ -1,0 +1,8 @@
+2024-08-24: Sync Github.
+
+2024-09-03:
+1. add direction index to pathway results.
+2. add barplot for pathway results. up regulate and down separtely.
+
+2025-03-05:
+1. Modified the calculation method of direction: instead of using only the fold change (FC) of markers, it now calculates using the FC of all molecules present in the dataset for each pathway.
