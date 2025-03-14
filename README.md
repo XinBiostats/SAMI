@@ -2,6 +2,7 @@
 ©July 11, 2023 University of Florida Research Foundation, Inc. All Rights Reserved.
 
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
+[![DOI](https://zenodo.org/badge/659767730.svg)](https://doi.org/10.5281/zenodo.15022514)
 
 This work is licensed under a
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
