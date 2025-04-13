@@ -48,7 +48,7 @@ Create your own environment for SAMI.(Due to potential incompatibility issues ca
 ```bash
 git clone https://github.com/XinBiostats/SAMI
 ```
-- Download [testing data](https://www.dropbox.com/scl/fo/qjdk94golwij84xfii15b/h?rlkey=etrdydm1iw86ntcprbem2wivn&dl=1) from Dropbox and put it in "./SAMI/datasets/".  
+- Download [testing data](https://www.dropbox.com/scl/fo/qjdk94golwij84xfii15b/h?rlkey=etrdydm1iw86ntcprbem2wivn&dl=1) from Dropbox and put it in "./SAMI/".  
 - Download [libaries](https://www.dropbox.com/scl/fo/d1ssah39qkfr9er640dai/APjGcNoiOX9zW84QvhCJtuw?rlkey=joosfjb7vjs72t3t4pmyxrrol&st=uqcbacfy&dl=1) for pathway enrichment analysis from Dropbox and put them in "./SAMI/lib/".  
 - Open the Terminal or PowerShell(Windows), then install requirements:
 ```bash
