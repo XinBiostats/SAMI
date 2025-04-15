@@ -28,8 +28,8 @@ We have pre-configured the environment for you using Docker, which ensures a con
 ```bash
 git clone https://github.com/XinBiostats/SAMI
 ```
-- Download [testing data]([![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15224641.svg)](https://doi.org/10.5281/zenodo.15224641)) from Zenodo and put it in "./SAMI/".  
-- Download [libaries]([![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15224641.svg)](https://doi.org/10.5281/zenodo.15224641)) for pathway enrichment analysis from Dropbox and put them in "./SAMI/".  
+- Download [testing data](https://doi.org/10.5281/zenodo.15224641) from Zenodo and put it in "./SAMI/".  
+- Download [libaries](https://doi.org/10.5281/zenodo.15224641) for pathway enrichment analysis from Dropbox and put them in "./SAMI/".  
 - Download Docker desktop from [Docker website](https://www.docker.com), and install it on your machine.  
 - Open the Terminal or PowerShell(Windows), then run below command with your SAMI path:
 ```bash
